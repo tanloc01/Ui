@@ -10906,6 +10906,15 @@ do
 						if am then
 							am(av, aa.Elements)
 						end
+						if au == "Toggle" and at.Title then
+							local clean = string.lower(at.Title):gsub("%s+", "")
+							if clean == "buyelectricclaw" then
+								buyecToggle = av
+							elseif clean == "buydragontalon" then
+								buydrgtlToggle = av
+							end
+							_G[clean .. "Toggle"] = av
+						end
 						return av
 					end
 				end
